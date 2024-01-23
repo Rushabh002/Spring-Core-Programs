@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean class="constructorinjection.Certi" name="cer">
+    <constructor-arg value="Python" />
+    </bean>
+    <bean class="constructorinjection.Person" name="person">
+    <constructor-arg value="Rushabh Jaiswal" />
+    <constructor-arg value="185" />
+        <constructor-arg ref="cer"/>
+        <constructor-arg>
+            <list>
+            <value>7383723540</value>
+            <value>8160290167</value>
+            </list>
+        </constructor-arg>
+
+    </bean>
+    <bean class="constructorinjection.Addition" name="add">
+        <constructor-arg value="10" type="double" index="0"/>
+        <constructor-arg value="13" type="double" index="1"/>
+    </bean>
+</beans>

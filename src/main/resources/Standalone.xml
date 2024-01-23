@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <util:list list-class="java.util.LinkedList" id="bestfriends">
+        <value> Bhavan</value>
+        <value>Ravi</value>
+        <value>Vaishali</value>
+        <value>Rupal</value>
+    </util:list>
+
+    <util:map map-class="java.util.HashMap" id="courses">
+        <entry key="Java" value="2500"/>
+        <entry key="Phython" value="2000"/>
+        <entry key=".Net" value="1500"/>
+    </util:map>
+
+    <bean class="SpringStandalone.Person" name="Person">
+        <constructor-arg ref="bestfriends"/>
+        <constructor-arg ref="courses"/>
+    </bean>
+    </beans>
